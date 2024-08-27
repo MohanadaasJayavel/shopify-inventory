@@ -1,15 +1,11 @@
 const mongoose = require("mongoose");
 
-const inventoryHistorySchema = new mongoose.Schema({
-  productId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Product",
-    required: true,
-  },
-  changeType: { type: String, required: true },
-  quantityBefore: { type: Number, required: true },
-  quantityAfter: { type: Number, required: true },
-  date: { type: Date, required: true, default: Date.now },
+const InventoryHistory = new mongoose.Schema({
+  productId: { type: String },
+  variantId: { type: String },
+  changes: { type: Object },
+  timestamp: { type: Date, default: Date.now },
+  action: { type: String}
 });
 
-module.exports = mongoose.model("InventoryHistory", inventoryHistorySchema);
+module.exports = mongoose.model("InventoryHistory", InventoryHistory);

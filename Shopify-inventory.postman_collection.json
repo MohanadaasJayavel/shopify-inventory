@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "b00b7491-6cc2-4635-8bb1-cd75b5cdff2b",
+		"name": "Shopify-inventory",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36858543"
+	},
+	"item": [
+		{
+			"name": "Get Inventory history",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"productId\":\"8005630951609\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://0892-43-225-165-47.ngrok-free.app/api/products/inventoryhistory",
+					"protocol": "https",
+					"host": [
+						"0892-43-225-165-47",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"api",
+						"products",
+						"inventoryhistory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://0892-43-225-165-47.ngrok-free.app/api/products",
+					"protocol": "https",
+					"host": [
+						"0892-43-225-165-47",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Inventory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\":8005630951605,\r\n    \"variantId\":44583653048501,\r\n    \"inventoryQuantity\":91\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://0892-43-225-165-47.ngrok-free.app/api/products/updateinventory",
+					"protocol": "https",
+					"host": [
+						"0892-43-225-165-47",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"api",
+						"products",
+						"updateinventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "shopify - get all locations",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Shopify-Access-Token",
+						"value": "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",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://mohanadaasteststore.myshopify.com/admin/api/2023-07/locations.json",
+					"protocol": "https",
+					"host": [
+						"mohanadaasteststore",
+						"myshopify",
+						"com"
+					],
+					"path": [
+						"admin",
+						"api",
+						"2023-07",
+						"locations.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "shopify - location based inventories",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Shopify-Access-Token",
+						"value": "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",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://mohanadaasteststore.myshopify.com/admin/api/2024-07/locations/72419573941/inventory_levels.json",
+					"protocol": "https",
+					"host": [
+						"mohanadaasteststore",
+						"myshopify",
+						"com"
+					],
+					"path": [
+						"admin",
+						"api",
+						"2024-07",
+						"locations",
+						"72419573941",
+						"inventory_levels.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shopify -Adjust Inventory levels",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Shopify-Access-Token",
+						"value": "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",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"location_id\": 72419573941,\r\n    \"inventory_item_id\": 46710730686645,\r\n    \"available\": 60\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mohanadaasteststore.myshopify.com/admin/api/2024-07/inventory_levels/set.json",
+					"protocol": "https",
+					"host": [
+						"mohanadaasteststore",
+						"myshopify",
+						"com"
+					],
+					"path": [
+						"admin",
+						"api",
+						"2024-07",
+						"inventory_levels",
+						"set.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://0892-43-225-165-47.ngrok-free.app/api/webhook/createorder",
+					"protocol": "https",
+					"host": [
+						"0892-43-225-165-47",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"api",
+						"webhook",
+						"createorder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Product details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://0892-43-225-165-47.ngrok-free.app/api/webhook/editproduct",
+					"protocol": "https",
+					"host": [
+						"0892-43-225-165-47",
+						"ngrok-free",
+						"app"
+					],
+					"path": [
+						"api",
+						"webhook",
+						"editproduct"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
