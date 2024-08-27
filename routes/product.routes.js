@@ -3,7 +3,7 @@ const { getProducts, updateInventory, getInventoryHistory } = require('../contro
 const router = express.Router();
 
 router.get('/', getProducts);
-router.post('/:id/inventory', updateInventory);
-router.get('/:id/history', getInventoryHistory);
+router.post('/updateinventory', updateInventory);
+router.get('/inventoryhistory', getInventoryHistory);
 
 module.exports = router;
